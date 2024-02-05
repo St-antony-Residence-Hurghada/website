@@ -1,0 +1,99 @@
+/** @section Thumbnails */
+
+// Figure Light
+.figure-light {
+	* + & {
+		margin-top: 30px;
+	}
+
+	figcaption {
+		padding-top: 10px;
+		color: $gray-400;
+	}
+}
+
+
+.thumbnail-classic{
+	max-width: 610px;
+	margin-right: auto;
+	margin-left: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	&__media{
+		overflow: hidden;
+		& + *{
+			margin-top: 20px;
+			@include media-breakpoint-up(xl){
+				margin-top: 50px;
+			}
+		}
+		img{
+			transition: $transition-base;
+		}
+		&:hover{
+			img{
+				transition: $transition-base;
+				transform: scale(1.03);
+			}
+		}
+	}
+	h3 + *{
+		margin-top: 5px;
+	}
+	a.location{
+		@include link($gray-600,$secondary);
+		.icon{
+			color: $secondary;
+			font-size: 22px;
+			&:before{
+				font-weight: 700;
+			}
+		}
+	}
+	.subtitle-sm{
+		font-size: 14px;
+	}
+}
+
+.gallery-thumbnail{
+	display: block;
+	max-width: 390px;
+	margin-right: auto;
+	margin-left: auto;
+	position: relative;
+	overflow: hidden;
+	.float-title{
+		color: $white;
+
+		font-weight: 600;
+		font-family: $font-family-sec;
+		line-height: 1.1;
+		position: absolute;
+		bottom: 43px;
+		transition: $transition-base;
+		text-align: center;
+		left: 15px;
+		right: 15px;
+		display: block;
+		font-size: 28px;
+
+		@include media-breakpoint-up(lg){
+			font-size: 30px;
+		}
+		@include media-breakpoint-up(xl){
+		 opacity: 0;
+			font-size: 36px;
+		}
+	}
+	&:hover{
+		.float-title{
+			@include media-breakpoint-up(xl){
+				opacity: 1;
+				transition: $transition-base;
+			}
+		}
+
+	}
+}
+

@@ -1,0 +1,13 @@
+mixin post-classic(obj)
+	.post-classic(class=obj.mode)
+		.post-classic__media
+			a(href=obj.link || "#"): +img(obj.img)
+		.post-classic__caption
+			span.post-info=obj.info
+			h3.post-title: a(href=obj.link || "#")=obj.title
+			a(href=obj.link || "#").btn.btn-icon.btn-icon-right.btn-transparent.btn-svg
+				span.svg-icon
+					svg(xmlns='http://www.w3.org/2000/svg' width='18' height='10' viewbox='0 0 18 10' )
+						path(d='M13 10V6H0V4H13V0L18 5L13 10Z' fill='')
+				span Read More
+

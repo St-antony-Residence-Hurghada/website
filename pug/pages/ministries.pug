@@ -1,0 +1,79 @@
+extends ../_skeleton
+
+include ../components/thumbnails
+
+block variables
+	- pageName = 'Ministries'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		title: 'Our <br class="d-none d-xl-block"> ministries',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed elit a urna mollis varius nec at ligula. ',
+		mode: 'bg-none'
+	})
+
+	section.section-lg.section.bg-default
+		.container
+			.row.row-narrow-50.row-xl-100(data-lightgallery="group")
+				.col-lg-4.col-sm-6.wow.fadeInUp(data-wow-delay=".1s")
+					+gallery-thumbnail({
+						title: 'Youth ministry',
+						thumb: 'ministries-1-390x495',
+						original: 'ministries-1-1200x800-original'
+					})
+				.col-lg-4.col-sm-6.wow.fadeInUp(data-wow-delay=".2s")
+					+gallery-thumbnail({
+						title: 'Men’s ministry',
+						thumb: 'ministries-2-390x495',
+						original: 'ministries-2-1200x800-original'
+					})
+				.col-lg-4.col-sm-6.wow.fadeInUp(data-wow-delay=".3s")
+					+gallery-thumbnail({
+						title: 'Transformation',
+						thumb: 'ministries-3-390x495',
+						original: 'ministries-3-1200x800-original'
+					})
+				.col-lg-4.col-sm-6.wow.fadeInUp(data-wow-delay=".4s")
+					+gallery-thumbnail({
+						title: 'Women\'s ministry',
+						thumb: 'ministries-4-390x495',
+						original: 'ministries-4-1200x800-original'
+					})
+				.col-lg-4.col-sm-6.wow.fadeInUp(data-wow-delay=".5s")
+					+gallery-thumbnail({
+						title: 'Children',
+						thumb: 'ministries-5-390x495',
+						original: 'ministries-5-1200x800-original'
+					})
+				.col-lg-4.col-sm-6.wow.fadeInUp(data-wow-delay=".6s")
+					+gallery-thumbnail({
+						title: 'Bible study',
+						thumb: 'ministries-6-390x495',
+						original: 'ministries-6-1200x800-original'
+					})
+
+	section.section.section-lg.bg-default
+		.container
+			.pre-title.text-center.wow.fadeInUp(data-wow-delay=".1s") Get Closer to God
+			h2.wow.fadeInUp(data-wow-delay=".2s").text-center Latest sermons
+			.row.row-narrow-50.row-40.row-xl
+				.col-lg-6.wow.fadeInUp(data-wow-delay=".3s")
+					.thumbnail-classic
+						a(href="#").thumbnail-classic__media
+							+img('thumbnail-classic-3-610x458')
+						h3: a(href="#") Good Gifts
+						span.subtitle-sm Pastor James Williams | Matthew 7:7-11
+				.col-lg-6.wow.fadeInUp(data-wow-delay=".3s")
+					.thumbnail-classic
+						a(href="#").thumbnail-classic__media
+							+img('thumbnail-classic-4-610x458')
+						h3: a(href="#") Disciples Love Like Jesus
+						span.subtitle-sm Pastor Edward Green | John 13:35
+
+
+
+
+
+	include ../sections/_footer-classic

@@ -1,0 +1,105 @@
+extends ../_skeleton
+
+include ../components/thumbnails
+include ../components/posts
+
+block variables
+	- pageName = 'Events'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		title: 'Latest events',
+		mode: 'simple-breadcrumbs'
+	})
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-xl-100
+				.col-12
+					.post-modern-box.bg-image-3.bg-img-3.context-dark
+						.post-date Oct 24, 2020
+						h2 Caring about the community & serving
+						a.location(href="#")
+							span.icon.mdi-map-marker.mdi
+							| 178 West 27th Street New York, NY 10012
+						a(href="single-event.html" data-wow-delay=".3s").shadow.btn.btn-icon.btn-icon-right.btn-primary.btn-svg.offset-xl-50
+							span.svg-icon
+								svg(xmlns='http://www.w3.org/2000/svg' width='18' height='10' viewbox='0 0 18 10' fill='#fff')
+									path(d='M13 10V6H0V4H13V0L18 5L13 10Z' fill='')
+							span Read more
+				.col-12
+					.row.row-narrow-50.row-30
+						.col-lg-4
+							+post-classic({
+								mode: 'sm',
+								img: 'event-1-390x273',
+								info: 'Rise Church,  January 23, 2020 ',
+								title: 'The Struggle with Fellowship',
+								link: 'single-event.html'
+							})
+						.col-lg-4
+							+post-classic({
+								mode: 'sm',
+								img: 'event-2-390x273',
+								info: 'Rise Church,  January 23, 2020 ',
+								title: 'The Dissappointment With Your Pastor',
+								link: 'single-event.html'
+							})
+						.col-lg-4
+							+post-classic({
+								mode: 'sm',
+								img: 'event-3-390x273',
+								info: 'Rise Church,  January 23, 2020 ',
+								title: 'The Importance of Faithful Laymen',
+								link: 'single-event.html'
+							})
+
+				.col-12
+					.post-modern-box.bg-image-3.bg-img-4.context-dark
+						.post-date Dec 25, 2020
+						h2 Christmas Eve Lessons and Carols
+						a.location(href="#")
+							span.icon.mdi-map-marker.mdi
+							| 178 West 27th Street New York, NY 10012
+						a(href="single-event.html" data-wow-delay=".3s").shadow.btn.btn-icon.btn-icon-right.btn-primary.btn-svg.offset-xl-50
+							span.svg-icon
+								svg(xmlns='http://www.w3.org/2000/svg' width='18' height='10' viewbox='0 0 18 10' fill='#fff')
+									path(d='M13 10V6H0V4H13V0L18 5L13 10Z' fill='')
+							span Read more
+				.col-12
+					.row.row-narrow-50.row-30
+						.col-lg-4
+							+post-classic({
+								mode: 'sm',
+								img: 'event-4-390x273',
+								info: 'Rise Church,  January 23, 2020 ',
+								title: 'Why Do Sermons Matter? Live Discussion',
+								link: 'single-event.html'
+							})
+						.col-lg-4
+							+post-classic({
+								mode: 'sm',
+								img: 'event-5-390x273',
+								info: 'Rise Church,  January 23, 2020 ',
+								title: ' The Power of Faith in Your Everyday Life',
+								link: 'single-event.html'
+							})
+						.col-lg-4
+							+post-classic({
+								mode: 'sm',
+								img: 'event-6-390x273',
+								info: 'Rise Church,  January 23, 2020 ',
+								title: 'The Rules of Modern Christian Dating',
+								link: 'single-event.html'
+							})
+
+
+
+
+
+
+
+
+	include ../sections/_footer-classic

@@ -1,0 +1,84 @@
+extends ../_skeleton
+
+block variables
+	- pageName = 'About Us'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		title: 'About us',
+		bg: 'breadcrumbs-bg-1'
+	})
+
+	section.section.section-lg.bg-default
+		.container
+			.row.justify-content-center
+				.col-xl-8.col-lg-10
+					.pre-title.wow.fadeInLeft(data-wow-delay=".1s") you are Welcome
+					h2.wow.fadeInRight(data-wow-delay=".2s") Sharing the God’s love with everyone
+					p.text-sm.wow.fadeInUp(data-wow-delay=".3s") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed elit a urna mollis varius nec at ligula. Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti. liquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas eget elit at lacus.
+					p.text-sm.wow.fadeInUp(data-wow-delay=".4s")  Vestibulum sed elit a urna mollis varius nec at ligula. Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti. liquam erat volutpat.
+					p.text-sm.wow.fadeInUp(data-wow-delay=".5s") Donec congue aliquam elit, non fringilla enim biben dum sit amet. Morbi veliti efficitur. Nullam suscipit sem eu augue consequat, et congue eros.
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-narrow-50.align-items-center.row-30
+				.col-lg-7.wow.fadeInLeft(data-wow-delay=".2s")
+					.inset-xl-right-60
+						+img('about-1-660x495')
+				.col-lg-5.wow.fadeInRight(data-wow-delay=".3s")
+					.pre-title what we believe
+					h2 Living in God’s amazing grace!
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed elit a urna mollis varius nec at ligula. Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti. Donec congue aliquam elit, non fringilla enim bibendum sit amet. Morbi velit velit, efficitur id nibh sollicitudin.
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-narrow-50.align-items-center.row-30.flex-xl-row-reverse
+				.col-lg-7.wow.fadeInRight(data-wow-delay=".2s")
+					.inset-xl-left-60
+						+img('about-2-660x495')
+				.col-lg-5.wow.fadeInLeft(data-wow-delay=".3s")
+					.pre-title LEAD PASTOR
+					h2
+						|Justin Kendrick
+						br
+						|Lead pastor
+					p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed elit a urna mollis varius nec at ligula. Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti.
+					.quote-italic “Donec mollis risus arcu, at vestibulum lacus. Nunc sodales purus non interdum...”
+					+img('signature-132x43.png')
+
+
+	section.section.section-lg.bg-default
+		.container
+			.row.row-narrow-50.align-items-center.row-30
+				.col-lg-7.wow.fadeInLeft(data-wow-delay=".2s")
+					.inset-xl-right-60
+						+img('about-3-660x495')
+				.col-lg-5.wow.fadeInRight(data-wow-delay=".3s")
+					.pre-title Become a part of our community
+					h2 Join our church
+					p Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti. Donec congue aliquam elit, non fringilla enim.
+					ul.list-marked.inset-xl-left-20.font-weight-medium.text-primary
+						li Church office
+						li Greeting
+						li Hospitality
+						li Impact groups
+					p Nunc fermentum tristique enim, non volutpat sem venenatis non. Nulla elementum pretium magna, nec consequat elit.
+					a(href="about-us.html" data-wow-delay=".3s").shadow.btn.btn-icon.btn-icon-right.btn-primary.btn-svg.offset-xl-55
+						span.svg-icon
+							svg(xmlns='http://www.w3.org/2000/svg' width='18' height='10' viewbox='0 0 18 10' fill='#fff')
+								path(d='M13 10V6H0V4H13V0L18 5L13 10Z' fill='')
+						span Join now
+
+
+
+
+	section.section.section-centered-content.bg-img-2.section-lg.context-dark
+		.container.text-center
+			.h1.wow.fadeInUp Sharing our faith & love to children
+			p.wow.fadeInUp.text-sm Make a contribution
+			a(href="#" data-wow-delay=".3s").wow.fadeInUp.shadow.btn.btn-md.btn-secondary.offset-xl-50.wow.fadeInUp Donate now
+
+
+	include ../sections/_footer-classic

@@ -1,0 +1,130 @@
+/** @section Posts */
+
+// Post Classic
+.post-classic {
+	max-width: 530px;
+	margin-right: auto;
+	margin-left: auto;
+	.post-title{
+		width: 100%;
+	}
+	&.sm{
+		max-width: 390px;
+		.post-classic__media{
+			& + *{
+				margin-top: 20px;
+				@include media-breakpoint-up(xl){
+					margin-top: 30px;
+				}
+			}
+		}
+	}
+	&__media{
+		& + *{
+			margin-top: 20px;
+			@include media-breakpoint-up(xl){
+				margin-top: 50px;
+			}
+		}
+		overflow: hidden;
+		img{
+			transition: $transition-base;
+			&:hover{
+				transition: $transition-base;
+				transform: scale(1.03);
+			}
+		}
+	}
+	&__caption{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		.post-info{
+			font-size: 14px;
+			color: $secondary;
+			margin-bottom: 10px;
+			@include media-breakpoint-up(xl){
+				margin-bottom: 19px;
+			}
+		}
+		h3{
+			line-height: 1.1;
+		}
+		* + .btn{
+			margin-top: 10px;
+			@include media-breakpoint-up(xl){
+				margin-top: 50px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+.post-modern-box{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: $white;
+	padding: 80px 15px;
+	text-align: center;
+	@include media-breakpoint-up(lg){
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+	@include media-breakpoint-up(xl){
+		padding-top: 178px;
+		padding-bottom: 178px;
+	}
+	.post-date{
+		font-size: 24px;
+		font-weight: 500;
+	}
+	* + h2{
+		margin-top: 6px;
+	}
+	.location{
+		display: inline-block;
+		font-size: 18px;
+		margin-top: 20px;
+		@include link($white,$white);
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+
+}
+
+// Context styling
+%context-dark {
+	.post-classic {
+
+	}
+}
+
+
+.single-event-date{
+	display: flex;
+	flex-direction: column;
+	.date{
+		font-weight: 500;
+		font-size: 24px;
+		color: $primary;
+		& + .location{
+			margin-top: 10px;
+		}
+	}
+	.location{
+		font-size: 18px;
+		align-items: center;
+		.icon{
+			color: $secondary;
+		}
+	}
+}

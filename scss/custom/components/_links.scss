@@ -1,0 +1,42 @@
+/** @section Links */
+
+// Standard link style
+a {
+	transition: $transition-base;
+
+	&,
+	&:focus,
+	&:active,
+	&:hover {
+		text-decoration: $link-decoration;
+	}
+
+	@include link($link-color, $link-hover-color);
+
+	&[href*='tel'],
+	&[href*='mailto'] {
+		white-space: nowrap;
+	}
+}
+
+.link-hover {
+	color: $link-hover-color;
+}
+
+.link-press {
+	color: $link-press-color;
+}
+
+
+a.location{
+	display: inline-flex;
+	align-items: flex-start;
+	font-size: 14px;
+	line-height: 1.6;
+	@include link($gray-600,$secondary);
+	.icon{
+		margin-right: 10px;
+		font-size: 20px;
+
+	}
+}

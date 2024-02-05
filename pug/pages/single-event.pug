@@ -1,0 +1,64 @@
+extends ../_skeleton
+
+include ../components/posts
+
+block variables
+	- pageName = 'Single Event'
+
+block page
+	include ../sections/_header-classic
+
+	+breadcrumbs({
+		title: 'The Struggle with Fellowship <br class="d-none d-xl-block">  in Student Ministry',
+		bg: 'breadcrumbs-bg-2',
+		text: 'Get closer to God every Thursday at our church'
+	})
+
+	section.section.section-lg.bg-default
+		.container
+			.row.justify-content-center
+				.col-xl-8.col-lg-10
+					.pre-title.wow.fadeInLeft(data-wow-delay=".1s") overview
+					h2.wow.fadeInRight(data-wow-delay=".2s") Exploring The Attitude to Fellowship in Student Ministries
+					p.text-sm.wow.fadeInUp(data-wow-delay=".3s") Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed elit a urna mollis varius nec at ligula. Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti. liquam erat volutpat. Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas eget elit at lacus.
+					p.text-sm.wow.fadeInUp(data-wow-delay=".4s")  Vestibulum sed elit a urna mollis varius nec at ligula. Vivamus rhoncus odio ut ultrices efficitur. Suspendisse potenti. liquam erat volutpat.
+					.single-event-date.offset-xl-50
+						span.date Jan 23, 2020
+						a.location(href="#")
+							span.icon.mdi-map-marker.mdi
+							| 178 West 27th Street New York, NY 10012
+					a(href="about-us.html" data-wow-delay=".3s").shadow.btn.btn-icon.btn-icon-right.btn-secondary.btn-svg.offset-xl-55.wow.fadeInUp
+						span.svg-icon
+							svg(xmlns='http://www.w3.org/2000/svg' width='18' height='10' viewbox='0 0 18 10' fill='#fff')
+								path(d='M13 10V6H0V4H13V0L18 5L13 10Z' fill='')
+						span Register here
+
+
+	section.section.section-lg.bg-default
+		.container
+			.pre-title.text-center Nearest & Upcoming
+			h2.text-center Upcoming Events
+			.row.row-narrow-50.row-30.row-xl
+				.col-lg-4
+					+post-classic({
+						mode: 'sm',
+						img: 'event-4-390x273',
+						info: 'Rise Church,  January 23, 2020 ',
+						title: 'Why Do Sermons Matter? Live Discussion'
+					})
+				.col-lg-4
+					+post-classic({
+						mode: 'sm',
+						img: 'event-5-390x273',
+						info: 'Rise Church,  January 23, 2020 ',
+						title: 'Why Disappointment With Your Pastor Could Be a Good Thing'
+					})
+				.col-lg-4
+					+post-classic({
+						mode: 'sm',
+						img: 'event-6-390x273',
+						info: 'Rise Church,  January 23, 2020 ',
+						title: 'Everyday Evangelism: The Importance of Faithful Laymen'
+					})
+
+	include ../sections/_footer-classic

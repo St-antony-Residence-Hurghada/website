@@ -1,0 +1,104 @@
+/** @section Row spacing */
+
+.row-0 {
+	@include grid-offset(0px);
+}
+
+.row-15 {
+	@include grid-offset(15px);
+}
+
+.row-20 {
+	@include grid-offset(20px);
+}
+
+.row-30 {
+	@include grid-offset(30px);
+}
+
+.row-40 {
+	@include grid-offset(40px);
+}
+
+.row-xl-40 {
+	@include grid-offset(20px);
+	@include media-breakpoint-up(xl){
+		@include grid-offset(40px);
+	}
+}
+
+.row-50 {
+	@include grid-offset(50px);
+}
+
+
+.row-xl-100 {
+	@include grid-offset(30px);
+	@include media-breakpoint-up(xl){
+		@include grid-offset(100px);
+	}
+}
+
+.row-lg-100 {
+	@include grid-offset(50px);
+	@include media-breakpoint-up(xl){
+		@include grid-offset(100px);
+	}
+}
+
+
+$grid-gutter-width-narrow: 10px;
+$grid-gutter-width-narrow-50: 50px;
+$grid-gutter-width-narrow-66: 66px;
+$grid-gutter-width-narrow-110: 110px;
+
+// Row Narrow
+.row-narrow {
+	margin-right: ($grid-gutter-width-narrow / -2);
+	margin-left: ($grid-gutter-width-narrow / -2);
+
+
+	> .col,
+	> [class*="col-"] {
+		padding-right: ($grid-gutter-width-narrow / 2);
+		padding-left: ($grid-gutter-width-narrow / 2);
+	}
+
+}
+
+// Row Narrow
+.row-narrow-50 {
+	@include media-breakpoint-up(xl){
+		margin-right: ($grid-gutter-width-narrow-50 / -2);
+		margin-left: ($grid-gutter-width-narrow-50 / -2);
+		> .col,
+		> [class*="col-"] {
+			padding-right: ($grid-gutter-width-narrow-50 / 2);
+			padding-left: ($grid-gutter-width-narrow-50 / 2);
+		}
+	}
+}
+
+.row-narrow-66 {
+	@include media-breakpoint-up(xl){
+		margin-right: ($grid-gutter-width-narrow-66 / -2);
+		margin-left: ($grid-gutter-width-narrow-66 / -2);
+		> .col,
+		> [class*="col-"] {
+			padding-right: ($grid-gutter-width-narrow-66 / 2);
+			padding-left: ($grid-gutter-width-narrow-66 / 2);
+		}
+	}
+}
+
+.row-narrow-110 {
+	@include media-breakpoint-up(xl){
+		margin-right: ($grid-gutter-width-narrow-110 / -2);
+		margin-left: ($grid-gutter-width-narrow-110 / -2);
+		> .col,
+		> [class*="col-"] {
+			padding-right: ($grid-gutter-width-narrow-110 / 2);
+			padding-left: ($grid-gutter-width-narrow-110 / 2);
+		}
+	}
+}

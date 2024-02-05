@@ -1,0 +1,4 @@
+mixin gallery-thumbnail(obj)
+	a(href="images/"+ obj.original + ".jpg" data-lightgallery="item").gallery-thumbnail
+		+img(obj.thumb)
+		.float-title=obj.title
