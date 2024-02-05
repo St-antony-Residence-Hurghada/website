@@ -1,3 +1,6 @@
+window.jQuery = window.$ = require('jquery');
+
+
 "use strict";
 (function () {
 	// Global letiables

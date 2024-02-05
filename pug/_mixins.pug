@@ -4,7 +4,7 @@ mixin img( name, options )
 	-
 		var size = getImageSize( name );
 		if( options && options.retina ) { size[0] = ~~(size[0]/2); size[1] = ~~(size[1]/2); }
-	img( src= procImg( name ), alt='', width= size[0], height= size[1] )&attributes( attributes )
+	img( src= name , alt='', width= size[0], height= size[1] )&attributes( attributes )
 
 
 //- Loop without indexing mixin
@@ -103,8 +103,8 @@ mixin navigation( menu, type )
 mixin logo
 	//Brand
 	a.brand( href='index.html' )&attributes( attributes )
-		+img( logo.default, { retina: true } ).brand-logo-dark
-		+img( logo.inverse, { retina: true } ).brand-logo-light
+		+img( require("../scss/custom/images/"+logo.default), { retina: true } ).brand-logo-dark
+		+img( require("../scss/custom/images/"+logo.inverse), { retina: true } ).brand-logo-light
 
 
 //- Copyright

@@ -1,17 +1,28 @@
 const path = require('path');
 const PugPlugin = require('pug-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
     index: './pug/pages/index.pug',
-    about: './pug/pages/about-us.pug'
+    'about-us': './pug/pages/about-us.pug'
     //☝🏽 Insert your PUG HTML files here
   },
   output: {
     path: path.join(__dirname, 'dist/'),
-    publicPath: '/',
+    publicPath: './',
     filename: 'assets/js/[name].[contenthash:8].js'
     //☝🏽 Output filename of files with hash for unique id
+  },
+  externals: {
+    // require("jquery") is external and available
+    //  on the global var jQuery
+    "jquery": "jQuery"
+  },
+  resolve: {
+    alias: {
+      "../jquery": require.resolve("jquery")
+    }
   },
   plugins: [
     new PugPlugin({
@@ -19,8 +30,12 @@ module.exports = {
       self: true,
       //☝🏽 Format HTML (only in dev mode)
       css: {
-        filename: '/css/[name].css'
+        filename: './assets/css/[name].[contenthash:8].css'
       }
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
   ],
   module: {
@@ -32,7 +47,7 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/,
-        use: ['css-loader', 'sass-loader', 'style-loader'],
+        use: ['css-loader', 'sass-loader'],
         //☝🏽 Load Sass files
       },
       {
@@ -40,16 +55,8 @@ module.exports = {
         test: /\.(png|jpg|jpeg|ico)/,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/img/[name].[hash:8][ext]'
+          filename: 'assets/img/[name].[ext]'
         }
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'style-loader', // creates style nodes from JS strings
-          'css-loader', // translates CSS into CommonJS
-          'sass-loader' // compiles Sass to CSS, using Node Sass by default
-        ]
       },
       {
         // To use fonts on pug files:
@@ -57,6 +64,13 @@ module.exports = {
         type: 'asset/resource',
         generator: {
           filename: 'assets/fonts/[name][ext][query]'
+        }
+      },
+      {
+        test: require.resolve('jquery'),
+        loader: 'expose-loader',
+        options: {
+          exposes: ['$', 'jQuery']
         }
       }
     ]
@@ -66,9 +80,16 @@ module.exports = {
       directory: path.join(__dirname, 'dist')
     },
     watchFiles: {
-      paths: ['pug/**/*.*', 'assets/scss/**/*.*', 'scss/**/*.*'],
+      paths: ['/pug/**/*.*', 'assets/scss/**/*.*', 'scss/**/*.*'],
       //☝🏽 Enables HMR in these folders
       options: {
+        client: {
+          overlay: {
+            errors: true,
+            warnings: false,
+            runtimeErrors: true,
+          },
+        },
         usePolling: true
       }
     }
